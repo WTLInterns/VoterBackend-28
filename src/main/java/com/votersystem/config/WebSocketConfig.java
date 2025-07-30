@@ -50,12 +50,17 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         // Register STOMP endpoint with SockJS fallback
         registry.addEndpoint("/ws/location")
-                .setAllowedOriginPatterns("*") // Allow all origins for development
-                .withSockJS();
+                .setAllowedOriginPatterns("*")
+                .setAllowedOrigins("https://api.expengo.com", "http://localhost:3000","http://localhost:5173")
+                .withSockJS()
+                .setWebSocketEnabled(true)
+                .setHeartbeatTime(25000)
+                .setDisconnectDelay(30000);
         
         // Register endpoint without SockJS for native WebSocket clients
         registry.addEndpoint("/ws/location")
-                .setAllowedOriginPatterns("*");
+                .setAllowedOriginPatterns("*")
+                .setAllowedOrigins("https://api.expengo.com", "http://localhost:3000","http://localhost:5173");
     }
 
     @Override
