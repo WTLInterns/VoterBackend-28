@@ -74,57 +74,57 @@ public class DataInitializer implements CommandLineRunner {
 
     private void initializeDemoAgents() {
         // Check if demo agents already exist
-        if (agentRepository.findByMobile("+919876543210").isEmpty()) {
+        if (agentRepository.findByMobile("9876543210").isEmpty()) {
             String password = "agent123";
 
             Agent agent1 = new Agent(
                 "AGENT001",
                 "राज",
                 "पाटील",
-                "+919876543210",
+                "6543210",
                 passwordEncoder.encode(password),
                 "9888888888" // Created by demo sub-admin (mobile)
             );
 
             agentRepository.save(agent1);
             System.out.println("Demo agent 1 created successfully!");
-            System.out.println("Mobile: +919876543210");
+            System.out.println("Mobile: 6543210");
             System.out.println("Password: " + password);
         }
 
-        if (agentRepository.findByMobile("+919876543211").isEmpty()) {
+        if (agentRepository.findByMobile("6543211").isEmpty()) {
             String password = "agent123";
 
             Agent agent2 = new Agent(
                 "AGENT002",
                 "सुनीता",
                 "शर्मा",
-                "+919876543211",
+                "6543211",
                 passwordEncoder.encode(password),
                 "9888888888" // Created by demo sub-admin (mobile)
             );
 
             agentRepository.save(agent2);
             System.out.println("Demo agent 2 created successfully!");
-            System.out.println("Mobile: +919876543211");
+            System.out.println("Mobile: 6543211");
             System.out.println("Password: " + password);
         }
 
-        if (agentRepository.findByMobile("+919876543212").isEmpty()) {
+        if (agentRepository.findByMobile("6543212").isEmpty()) {
             String password = "agent123";
 
             Agent agent3 = new Agent(
                 "AGENT003",
                 "अमित",
                 "कुमार",
-                "+919876543212",
+                "6543212",
                 passwordEncoder.encode(password),
                 "9888888888" // Created by demo sub-admin (mobile)
             );
 
             agentRepository.save(agent3);
             System.out.println("Demo agent 3 created successfully!");
-            System.out.println("Mobile: +919876543212");
+            System.out.println("Mobile: 6543212");
             System.out.println("Password: " + password);
         }
     }
